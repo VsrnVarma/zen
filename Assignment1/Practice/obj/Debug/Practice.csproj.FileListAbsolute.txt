@@ -1,0 +1,7 @@
+C:\Users\Sesha Varma\Desktop\Sree\Zensar\Day6\Practice\bin\Debug\Practice.exe.config
+C:\Users\Sesha Varma\Desktop\Sree\Zensar\Day6\Practice\bin\Debug\Practice.exe
+C:\Users\Sesha Varma\Desktop\Sree\Zensar\Day6\Practice\bin\Debug\Practice.pdb
+C:\Users\Sesha Varma\Desktop\Sree\Zensar\Day6\Practice\obj\Debug\Practice.csproj.AssemblyReference.cache
+C:\Users\Sesha Varma\Desktop\Sree\Zensar\Day6\Practice\obj\Debug\Practice.csproj.CoreCompileInputs.cache
+C:\Users\Sesha Varma\Desktop\Sree\Zensar\Day6\Practice\obj\Debug\Practice.exe
+C:\Users\Sesha Varma\Desktop\Sree\Zensar\Day6\Practice\obj\Debug\Practice.pdb

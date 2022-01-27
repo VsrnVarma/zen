@@ -1,0 +1,7 @@
+D:\Zensar\Assignments\Assignment2\Strings\bin\Debug\Strings.exe.config
+D:\Zensar\Assignments\Assignment2\Strings\bin\Debug\Strings.exe
+D:\Zensar\Assignments\Assignment2\Strings\bin\Debug\Strings.pdb
+D:\Zensar\Assignments\Assignment2\Strings\obj\Debug\Strings.csproj.AssemblyReference.cache
+D:\Zensar\Assignments\Assignment2\Strings\obj\Debug\Strings.csproj.CoreCompileInputs.cache
+D:\Zensar\Assignments\Assignment2\Strings\obj\Debug\Strings.exe
+D:\Zensar\Assignments\Assignment2\Strings\obj\Debug\Strings.pdb
