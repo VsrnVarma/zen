@@ -1,4 +1,8 @@
-﻿using System;
+Create a Class called Products with Productid, Product Name, Price. 
+Accept 10 Products, sort them based on the price, and display the sorted Products.
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
