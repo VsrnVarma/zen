@@ -25,11 +25,11 @@ namespace CLibrary
             {
                 double concession = 0.3 * TotalFare;
                 double cfare = TotalFare - concession;
-                Console.WriteLine("Senior Citizen "+cfare);
+                Console.WriteLine("Senior Citizen ticket costs"+cfare);
             }
             else
             {
-                Console.WriteLine("Ticket booked "+TotalFare);
+                Console.WriteLine("Ticket booked which costs "+TotalFare);
             }
         } 
     }
