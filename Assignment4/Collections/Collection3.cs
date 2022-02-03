@@ -1,4 +1,7 @@
-﻿using System;
+Create a simple Stationery application to add items and display added items using Generic collections.
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
