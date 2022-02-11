@@ -1,0 +1,49 @@
+use ZensarAss;
+
+--Assignement2
+
+--1 Retrieve a list of MANAGERS.
+select mgr from EMP;
+
+--2 Find out salary of both MILLER and SMITH.
+select empname,salary from EMP where empname in ('MILLER','SMITH');
+
+--3 Find out the names and salaries of all employees earning more than 1000 per month
+select empname,salary from EMP where salary>1000;
+
+--4 Display the names and salaries of all employees except JAMES.
+select empname,salary from EMP where empname<>'JAMES';
+
+--5 Find out the details of employees whose names begin with ‘S’.
+select * from EMP where empname like 's%';
+
+--6 Find out the names of all employees that have ‘A’ anywhere in their name. 
+select * from EMP where empname like '%a%';
+
+--7 Find out the names of all employees that have ‘L’ as their third character in their name.
+select empname from EMP where empname like '__l%';
+
+--8 Find out the names of the employees whose name begin with ‘A’ or ‘M’. 
+select empname from EMP where empname like '[am]%';
+
+--9 Compute yearly salary of SMITH.
+select empname,salary*30*12 as Annual_Sal from EMP where empname='SMITH'; 
+
+--10 Compute daily salary of JONES.
+select empname,salary as Daily_Sal from EMP where empname='JONES';
+
+--11 Calculate the total monthly salary of all employees.
+select empname,salary*30 as Month_Sal from EMP;
+
+--12 Print the average annual salary.
+select avg(salary*30*12) as Avg_AnnualSal from EMP;
+
+--13 Select the name, job, salary, department number of all employees except SALESMAN from department number 30. 
+select empname,job,salary,deptno from EMP where job<>'salesman' and deptno=30;
+
+--14 List unique departments of the EMP table.
+select distinct(deptno) from EMP;
+
+--15 List the name and salary of employees who earn more than 1500 and are in department 10 or 30. 
+--Label the columns Employee and Monthly Salary respectively.
+select empname 'Employee ',salary 'Monthly_Salary' from EMP where salary>1500 and deptno in (10,30);
