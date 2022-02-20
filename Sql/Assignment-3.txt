@@ -1,0 +1,119 @@
+--Assignment3
+use ZensarAss
+--1 Write a T-SQL Program to generate complete payslip of a given employee with respect to the following condition
+--	HRA  as 10% Of sal
+--	DA as  20% of sal
+--	PF as 8% of sal
+--	IT as 5% of sal
+--	Deductions as sum of PF and IT
+--	Gross Salary as sum of SAL,HRA,DA and Deductions
+--  Net salary as  Gross salary- Deduction
+
+create table Employee1(Empid int,EName varchar(15),Salary int)
+insert into Employee1 values(1,'Sai Kiran',25000),(2,'Kishore Gupta',29000),(3,'Bhargav',35000)
+
+begin
+declare @id int=3
+declare @Hra int, @DA int,@PF int,@IT int,@Deduction int,@Gross int, @Net int
+set @Hra=(select salary*0.1 from Employee1 where empid=@id)
+set @DA=(select salary*0.2 from Employee1 where empid=@id)
+set @PF=(select salary*0.08 from Employee1 where empid=@id)
+set @IT=(select salary*0.05 from Employee1 where empid=@id)
+set @Deduction=@PF+@IT
+set @Gross=(select salary from Employee1 where empid=@id)+@Hra+@DA+@Deduction
+set @Net=(select salary from Employee1 where empid=@id)-@Deduction
+
+print 'Payslip of '+cast(@id as varchar(5))
+print 'Hra: '+cast(@Hra as varchar(5))
+print 'DA: '+cast(@DA as varchar(5))
+print 'PF: '+cast(@PF as varchar(5))
+print 'IT: '+cast(@IT as varchar(5))
+print 'Deduction: '+cast(@Deduction as varchar(5))
+print 'Gross: '+cast(@Gross as varchar(5))
+print 'Net: '+cast(@Net as varchar(5))
+end
+
+
+--2 Write a T-SQL Program to Display complete result of a given student. 
+-- (Note: Consider 10th standard result sheet and Student table structure as (sno,sname,maths,phy,chem)
+
+create table Student(sno int primary key,sname varchar(15),maths int,physics int,chemistry int);
+insert into Student
+values(1,'Hari',80,75,87),(2,'Sree',90,79,84),(3,'Datta',87,84,79);
+
+begin
+declare @eid int,@math int,@phy int,@chem int
+declare @total int,@percent int
+set @eid=1
+set @math=(select maths from Student where sno=@eid)
+set @phy=(select Physics from Student where sno=@eid)
+set @chem=(select chemistry from Student where sno=@eid)
+set @total=@math+@phy+@chem
+set @percent=(@total*100)/300
+select sname, @total as Total_marks,@percent as Percentage from Student where sno=@eid
+end
+
+--3 Write a T-SQL Program to find the factorial of a given number.
+begin
+declare @num int=4
+declare @fact int=1
+declare @i int=1
+while(@i<=@num)
+begin
+	set @fact=@fact*@i
+	set @i=@i+1
+end
+print 'Factorial of '+cast(@num as varchar(6))+' is '+cast(@fact as varchar(5))
+end
+
+--4 Create a stored procedure to generate multiplication tables up to a given number.
+create or alter procedure MultiplicationTable(@num int)
+as
+begin
+	declare @tbl table(one int,two int, result int )
+	declare @i int, @j int,@mul int
+	set @i=1
+	while @i<=@num
+	begin			
+		set @j=1
+			while @j<=10
+			begin
+				set @mul=@i*@j
+				insert into @tbl values(@i,@j,@mul)
+				set @j=@j+1
+			end
+		select * from @tbl
+		set @i=@i+1
+		delete from @tbl
+	end	
+end
+exec MultiplicationTable 2
+
+--5 Create a user defined function calculate Bonus for all employees of a  given job using following conditions
+--For Deptno10 employees 15% of sal as bonus.
+--For Deptno20 employees  20% of sal as bonus.
+--For Others employees 5%of sal as bonus.
+select * from emp
+create or alter function Bonus()
+returns table
+as return (select Empno,Empname, Bonus=case when deptno=10 then salary*0.15
+                                      when deptno=20 then salary*0.2
+									  else salary*0.05 end from emp)
+select * from Bonus()
+
+--6 Create a trigger to restrict data manipulation on EMP table during General holidays. Display the error message like “Due to Independence day you cannot manipulate data”
+--  Note: Create holiday table as (holiday_date,Holiday_name) store at least 4 holiday details.
+create table Employee(empid int primary key,empname varchar(10),Date_worked date,working_hours int);
+create table Holiday(holiday_date date,holiday_name varchar(20))
+insert into Holiday values('2022-01-26','Republic day'),('2021-08-15','Independence day'),
+                          ('2021-10-2','Gandhi Jayanthi'),('2021-12-25','Christmas')
+
+
+create trigger DmlTrigger on Employee instead of insert
+as begin
+print 'As it is public holiday you cannot manipulate data'
+rollback transaction
+end
+
+insert into employee values(1,'Harinath','2021-08-15',7)
+
