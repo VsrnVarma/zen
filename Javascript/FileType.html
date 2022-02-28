@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<body>
+    File Type: <input type="text" id="file" <!--onkeypress="Filetype()"-->
+    <br><br>
+    <button onclick="Filetype()">File Type</button>
+    <p id="type"></p>
+    <script type="text/javascript">
+        function Filetype(){
+            var txt=document.getElementById('file').value;
+            const split=txt.split(".");
+            let doc=split.pop();
+            if(doc=="txt")
+              document.getElementById('type').innerHTML="You have given a text file.";
+            if(doc=="pdf")
+                document.getElementById('type').innerHTML="You have given a "+doc+" file";
+            if(doc=="docx")
+                document.getElementById('type').innerHTML="You have given a word document.";
+            if(doc=="jpeg"||doc=="jpg"||doc=="png")
+                document.getElementById('type').innerHTML="You have given an image file";
+            
+        }
+    </script>
+</body>

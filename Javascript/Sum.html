@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <script type="text/javascript">
+        function ComputeSum(){
+            var num1=document.getElementById('n1').value;
+            var num2=document.getElementById('n2').value;
+            if(num1==num2){
+                const res=3*(parseInt(num1)+parseInt(num2));
+                document.getElementById('result').innerHTML="The result is: "+res.toString();
+            }
+            else{
+                var res=parseInt(num1)+parseInt(num2);
+                document.getElementById('result').innerHTML="The result is: "+res.toString();
+            }  
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Number1: <input type="text" id="n1"/>
+        <br> <br>
+        Number2: <input type="text" id="n2"/>
+        <br> <br>
+        <button type="button" onclick="ComputeSum()">Sum</button>
+        <br> <br>
+        <div id="result"></div>
+    </form>
+</body>

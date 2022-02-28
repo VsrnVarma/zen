@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<body>
+    <form>
+        Number1: <input type="number" id="n1"/>
+        <br> <br>
+        Number2: <input type="number" id="n2"/>
+        <br> <br>
+        <button type="button" onclick="RangeCheck()">Range</button>
+        <br> <br>
+        <div id="result"></div>
+        <script type="text/javascript">
+            function RangeCheck(){
+                var num1=document.getElementById('n1').value;
+                var num2=document.getElementById('n2').value;
+                if(num1>=50 && num1<=99 && num2>=50 && num2<=99){
+                    document.getElementById('result').innerHTML="Yes, both the numbers are in given range";
+                }
+                else
+                    document.getElementById('result').innerHTML="No, both the numbers are not in the given range";
+            }
+        </script>
+    </form>
+</body>
