@@ -13,7 +13,7 @@ namespace CS2
         void showStudentScreen();
         void showAdminScreen();
         void showAllStudentsScreen();
-        void showStudentRegistrationScreen(); // Execute the register method of AppEngine class
+        void showStudentRegistrationScreen();
         void introduceNewCourseScreen();
         void showAllCoursesScreen();
         void showAllEnrollmentsScreen();
