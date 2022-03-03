@@ -205,9 +205,9 @@ namespace CS2
                 {
                     Console.Write("Enter the new duration: ");
                     int dur = Convert.ToInt32(Console.ReadLine());
-                    cmd = new SqlCommand("update employee set duration=@due where empid=@eid", con);
-                    cmd.Parameters.AddWithValue("@due", dur);
-                    cmd.Parameters.AddWithValue("@eid", id);
+                    cmd = new SqlCommand("update course set duration=@dur where Cid=@cid", con);
+                    cmd.Parameters.AddWithValue("@dur", dur);
+                    cmd.Parameters.AddWithValue("@cid", id);
                     int result = cmd.ExecuteNonQuery();
                     if (result > 0)
                         Console.WriteLine("Record updated successfully");
@@ -218,9 +218,9 @@ namespace CS2
                 {
                     Console.Write("Enter the new fee: ");
                     int fee = Convert.ToInt32(Console.ReadLine());
-                    cmd = new SqlCommand("update employee set fee=@fee where empid=@eid", con);
+                    cmd = new SqlCommand("update course set fee=@fee where Cid=@cid", con);
                     cmd.Parameters.AddWithValue("@fee", fee);
-                    cmd.Parameters.AddWithValue("@eid", id);
+                    cmd.Parameters.AddWithValue("@cid", id);
                     int result = cmd.ExecuteNonQuery();
                     if (result > 0)
                         Console.WriteLine("Record updated successfully");
@@ -274,7 +274,7 @@ namespace CS2
                 {
                     Console.Write("Enter the new name: ");
                     string name = Console.ReadLine();
-                    cmd = new SqlCommand("update employee set Name=@name where Sid=@sid", con);
+                    cmd = new SqlCommand("update student set Name=@name where Sid=@sid", con);
                     cmd.Parameters.AddWithValue("@name", name);
                     cmd.Parameters.AddWithValue("@sid", id);
                     int result = cmd.ExecuteNonQuery();
