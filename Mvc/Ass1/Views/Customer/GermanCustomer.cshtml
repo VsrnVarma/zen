@@ -1,0 +1,18 @@
+@model IEnumerable<Ass1.Models.Order>
+@{
+    ViewBag.Title = "CustomerDetails";
+}
+
+<h2>Customer Details</h2>
+
+@foreach(var order in Model)
+            {
+                <ul>
+                    Order Id: <li>@order.OrderID</li>
+                    Customer Id:<li>@order.CustomerID</li>
+                    Company Name: <li>@order.Customer.CompanyName</li>
+                    Contact Name: <li>@order.Customer.ContactName</li>
+                    Contact Title: <li>@order.Customer.ContactTitle</li>
+                </ul>
+                <p>Address: @order.Customer.Address, @order.Customer.City, @order.Customer.Country</p>
+            }
