@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Ass2.Models.Movietable>
+@{
+    ViewBag.Title = "ListByYear";
+}
+
+<h2>Movies Released in 2017</h2>
+
+@foreach (var m in Model)
+{
+    <ul>
+        <li>@m.MovieId</li>
+        <li>@m.MovieName</li>
+        <li>@m.ReleaseDate</li>
+    </ul>
+}

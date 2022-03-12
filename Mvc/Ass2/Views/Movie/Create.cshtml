@@ -1,0 +1,42 @@
+﻿@model Ass2.Models.Movietable
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+ {
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+    <h5>New Movie</h5>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <b>@Html.DisplayName("Id")</b>
+        @Html.EditorFor(m => m.MovieId)
+        @Html.ValidationMessageFor(m => m.MovieId, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayName("Name")</b>
+        @Html.EditorFor(m => m.MovieName)
+        @Html.ValidationMessageFor(m => m.MovieName, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <b>@Html.DisplayName("Release Date")</b>
+        @Html.EditorFor(m => m.ReleaseDate)
+        @Html.ValidationMessageFor(m => m.ReleaseDate, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-danger"/>
+    </div>
+</div>
+ }
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
