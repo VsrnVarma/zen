@@ -1,4 +1,4 @@
-﻿@model Ass2.Models.Movietable
+@model Ass2.Models.Movietable
 @{
     ViewBag.Title = "Edit";
 }
@@ -12,20 +12,29 @@
         <hr />
         @Html.HiddenFor(m => m.MovieId)
 
-        <div class="form-group">
+        <dl class="dl-horizontal">
+        <dt style="margin-bottom:25px">
             <b>@Html.DisplayName("Name")</b>
+        </dt>
+        <dd>
             @Html.EditorFor(m => m.MovieName, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(m => m.MovieName)
-        </div>
-
-        <div class="form-group">
+        </dd>
+        <dt>
             <b>@Html.DisplayName("Release Date")</b>
+        </dt>
+        <dd>
             @Html.EditorFor(m => m.ReleaseDate, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(m => m.ReleaseDate)
-        </div>
+        </dd>
+        </dl>
+
 
         <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-danger" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" value="Save" class="btn btn-danger" />
         </div>
     </div>
  }
