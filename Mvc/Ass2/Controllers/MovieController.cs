@@ -24,7 +24,7 @@ namespace Ass2.Controllers
 
         public ActionResult GetMovieByYear()
         {
-            int year = 2017;
+            int year = 2016;
             List<Movietable> movie = (me.Movietables.Where(m => m.ReleaseDate.Value.Year == year ).Select(m => m)).ToList();
             return View(movie);
         }
