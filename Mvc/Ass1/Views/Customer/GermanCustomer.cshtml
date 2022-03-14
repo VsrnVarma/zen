@@ -1,18 +1,15 @@
-@model IEnumerable<Ass1.Models.Order>
+@model IEnumerable<Ass1.Models.Customer>
 @{
-    ViewBag.Title = "CustomerDetails";
+    ViewBag.Title = "GermanCustomer";
 }
 
-<h2>Customer Details</h2>
+<h2>The German Customers</h2>
 
-@foreach(var order in Model)
+@foreach(var cust in Model)
             {
                 <ul>
-                    Order Id: <li>@order.OrderID</li>
-                    Customer Id:<li>@order.CustomerID</li>
-                    Company Name: <li>@order.Customer.CompanyName</li>
-                    Contact Name: <li>@order.Customer.ContactName</li>
-                    Contact Title: <li>@order.Customer.ContactTitle</li>
+                    <li>@cust.CustomerID</li>
+                    <li>@cust.CompanyName</li>
+                    <li>@cust.City</li>
                 </ul>
-                <p>Address: @order.Customer.Address, @order.Customer.City, @order.Customer.Country</p>
             }
