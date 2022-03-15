@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MvcCodeFirstEg.Models.Student>
+@{
+    ViewBag.Title = "StudCity";
+}
+
+<h2>List Of Students</h2>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Branch</th>
+        <th>Percentage</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.City</td>
+            <td>@item.Branch</td>
+            <td>@item.Percentage</td>
+        </tr>
+    }
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

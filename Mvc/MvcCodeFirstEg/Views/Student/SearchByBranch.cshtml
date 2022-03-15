@@ -1,0 +1,22 @@
+﻿@model MvcCodeFirstEg.Models.Student
+@{
+    ViewBag.Title = "SearchByBranch";
+}
+
+<h2>Search Sudents By Branch</h2>
+
+@using (Html.BeginForm("StudBranch","Student",FormMethod.Get))
+{
+    <hr />
+    <div class="form-horizontal">
+        @Html.DisplayName("Branch")
+        @Html.TextBox("branch")
+    </div>
+    <br />
+    <div class="form-group">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Select" class="btn btn-danger" />
+    </div>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "SearchByPercent";
+}
+
+<h2>Search Students By Percent</h2>
+
+@using (Html.BeginForm("StudPercent", "Student", FormMethod.Get))
+{
+    <hr />
+    <div class="form-horizontal">
+        @Html.DisplayName("Start")
+        @Html.TextBox("start")
+        @Html.DisplayName("End")
+        @Html.TextBox("end")
+    </div>
+    <br />
+    <div class="form-group">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Select" class="btn btn-danger" />
+    </div>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
