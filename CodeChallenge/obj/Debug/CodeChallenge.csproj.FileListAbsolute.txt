@@ -1,0 +1,7 @@
+E:\Zensar\Day43\CodeChallenge\bin\Debug\CodeChallenge.exe.config
+E:\Zensar\Day43\CodeChallenge\bin\Debug\CodeChallenge.exe
+E:\Zensar\Day43\CodeChallenge\bin\Debug\CodeChallenge.pdb
+E:\Zensar\Day43\CodeChallenge\obj\Debug\CodeChallenge.csproj.AssemblyReference.cache
+E:\Zensar\Day43\CodeChallenge\obj\Debug\CodeChallenge.csproj.CoreCompileInputs.cache
+E:\Zensar\Day43\CodeChallenge\obj\Debug\CodeChallenge.exe
+E:\Zensar\Day43\CodeChallenge\obj\Debug\CodeChallenge.pdb
